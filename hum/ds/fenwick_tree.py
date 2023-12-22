@@ -3,7 +3,7 @@ class FenwickTree:
     self.n = n
     self.bit = [0] * n
 
-  def get_sum(self, l=0, r=0):
+  def get_sum(self, l, r):
     return self.__get_sum(r) - self.__get_sum(l - 1)
 
   def __get_sum(self, r):
