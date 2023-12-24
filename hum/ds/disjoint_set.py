@@ -1,5 +1,3 @@
-from io import input
-
 class DJSet:
 
   def __init__(self, n):
