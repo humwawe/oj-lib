@@ -1,6 +1,7 @@
 class SegmentTree:
   def __init__(self, n, op):
     self.n = n
+    # op max -> -inf, min-> inf
     self.inf = float('inf')
     self.log = (n - 1).bit_length()
     self.size = 1 << self.log
