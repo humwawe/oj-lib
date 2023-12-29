@@ -1,6 +1,6 @@
 class FenwickTree:
   def __init__(self, n):
-    self.n = n
+    self.N = n
     self.bit = [0] * n
 
   def get_sum(self, l, r):
@@ -14,7 +14,7 @@ class FenwickTree:
     return res
 
   def add(self, idx, v):
-    while idx < self.n:
+    while idx < self.N:
       self.bit[idx] += v
       idx = idx | (idx + 1)
 
