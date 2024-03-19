@@ -1,14 +1,14 @@
 class PrimeTable:
   def __init__(self, n: int) -> None:
     self.N = n
-    self.primes = []
+    self.pr = []
     # 存最大质因子
     self.max_div = list(range(n + 1))
     # self.phi = list(range(n + 1))
 
     for i in range(2, n + 1):
       if self.max_div[i] == i:
-        self.primes.append(i)
+        self.pr.append(i)
         for j in range(i, n + 1, i):
           self.max_div[j] = i
         #  self.phi[j] = self.phi[j] // i * (i - 1)
@@ -18,7 +18,7 @@ class PrimeTable:
       return False
     if x <= self.N:
       return self.max_div[x] == x
-    for p in self.primes:
+    for p in self.pr:
       if p * p > x:
         break
       if x % p == 0:
@@ -27,7 +27,7 @@ class PrimeTable:
 
   def prime_factorization(self, x: int):
     if x > self.N:
-      for p in self.primes:
+      for p in self.pr:
         if p * p > x:
           break
         if x <= self.N:

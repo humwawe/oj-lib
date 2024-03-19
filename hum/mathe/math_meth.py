@@ -1,15 +1,16 @@
 def primes(n):  # 埃氏筛法，从x ^ 2 开始，将x ^ 2, (x + 1) * x,..n / x * x标记
-  pr = [] * (n + 1)
+  pr = []
   vis = [False] * (n + 1)
   for i in range(2, n + 1):
     if vis[i]: continue
     pr.append(i)
     for j in range(i * i, n + 1, i):
       vis[j] = True
+  return pr
 
 
 def primes_sieve(n):  # 线性筛，被最小质因子筛掉
-  pr = [] * (n + 1)
+  pr = []
   vis = [False] * (n + 1)
   for i in range(2, n + 1):
     if not vis[i]:
@@ -23,7 +24,7 @@ def primes_sieve(n):  # 线性筛，被最小质因子筛掉
 
 
 def primes_lpf(n):  # lpf[i] 记录每个数最小的质因子
-  pr = [] * (n + 1)
+  pr = []
   lpf = [0] * (n + 1)
   for i in range(2, n + 1):
     if lpf[i] == 0:
