@@ -19,3 +19,28 @@ def z_function(s):
       l = i
       r = i + z[i] - 1
   return z
+
+
+"""
+kmp[i] 为满足 s[0:z-1] = s[i-z:i-1] 的最大 z 值，
+匹配不能都从0开始，否则z 等于 i 均为 s[0:i-1] = s[0:i-1]
+kmp[0] = -1
+  
+  0  1  2  3  4  5  6
+  a  a  b  a  a  b  # 
+[-1, 0, 1, 0, 1, 2, 3]
+"""
+
+
+def kmp_pre(s):
+  n = len(s)
+  kmp = [0] * (n + 1)
+  kmp[0] = -1
+  j = 0
+  for i in range(1, n):
+    while j >= 0 and s[i] != s[j]:
+      j = kmp[j]
+    j += 1
+    kmp[i + 1] = j
+  return kmp
+
