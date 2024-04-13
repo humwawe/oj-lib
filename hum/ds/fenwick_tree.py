@@ -3,6 +3,13 @@ class FenwickTree:
     self.N = n
     self.bit = [0] * n
 
+  def set_bit(self, arr):
+    self.bit = arr[:]
+
+    for i in range(self.N):
+      if i | (i + 1) < self.N:
+        self.bit[i | (i + 1)] += self.bit[i]
+
   def get_sum(self, l, r):
     return self.__get_sum(r) - self.__get_sum(l - 1)
 
