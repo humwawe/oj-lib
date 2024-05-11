@@ -1,6 +1,6 @@
 class Factorial:
   def __init__(self, n, mod) -> None:
-    n += 5
+    n += 1
     self.mod = mod
     self.f = [1 for _ in range(n)]
     self.g = [1 for _ in range(n)]
@@ -33,4 +33,3 @@ class Factorial:
 
   def inv(self, n):
     return self.f[n - 1] * self.g[n] % self.mod
-
