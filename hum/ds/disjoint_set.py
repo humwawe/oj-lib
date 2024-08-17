@@ -46,3 +46,6 @@ class DJSet:
       r = self.find(i)
       ret[r].append(i)
     return ret
+
+  def reset(self, x):
+    self.p[x] = -1
