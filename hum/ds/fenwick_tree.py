@@ -10,6 +10,7 @@ class FenwickTree:
       if i | (i + 1) < self.N:
         self.bit[i | (i + 1)] += self.bit[i]
 
+  # [ ]
   def get_sum(self, l, r):
     return self.__get_sum(r) - self.__get_sum(l - 1)
 
